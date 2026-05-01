@@ -1,5 +1,4 @@
-extends Sprite2D
-
+extends CharacterBody2D
 var screen_size : Vector2
 var lanes : Array[float]
 var current_lane := 1
@@ -37,6 +36,7 @@ func _input(event):
 		move_left()
 	if event.is_action_pressed("move_right"):
 		move_right()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:		
