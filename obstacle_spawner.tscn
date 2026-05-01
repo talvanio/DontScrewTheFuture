@@ -8,7 +8,6 @@ script = ExtResource("1_asyhu")
 projectile_scene = ExtResource("2_iawrw")
 
 [node name="Timer" type="Timer" parent="." unique_id=1345100961]
-wait_time = 1.5
 autostart = true
 
 [node name="Lane1Marker" type="Marker2D" parent="." unique_id=1904202965]

@@ -18086,6 +18086,7 @@ position = Vector2(360, 1000)
 script = ExtResource("2_0xm2m")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player" unique_id=913090611]
+scale = Vector2(1.1865529, 1.1865529)
 texture = ExtResource("1_ig7tw")
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="Player" unique_id=1082100055]
