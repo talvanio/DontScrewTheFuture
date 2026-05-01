@@ -43,21 +43,26 @@ func _input(event):
 	if event.is_action_pressed("move_right"):
 		move_right()
 func die():
-	get_tree().paused = true
+	get_tree().change_scene_to_file("res://game_over.tscn")
+
 	
 func take_damage():
 	health = health - 1
 	print("health:",health)
+
 	if health <= 0:
 		die()
-		
+		return
+
 	for i in range(3):
 		playerSprite.modulate = Color(1,0,0)
 		await get_tree().create_timer(0.1).timeout
 		
 		playerSprite.modulate = Color(1,1,1)
 		await get_tree().create_timer(0.1).timeout
-	
+		
+
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:		
 	pass
