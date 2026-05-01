@@ -28,6 +28,7 @@ func _ready() -> void:
 		quarter * 2,
 		quarter * 3
 	]
+	
 
 	to_initial_position()
 
