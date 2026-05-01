@@ -1,7 +1,26 @@
 [gd_scene format=3 uid="uid://bj3plhgey2vv7"]
 
-[ext_resource type="Script" uid="uid://cg1eo2e8dma18" path="res://area_2d.gd" id="1_sl1jc"]
 [ext_resource type="Texture2D" uid="uid://varmhobtij5p" path="res://assets/bullets.png" id="2_aubd6"]
+
+[sub_resource type="GDScript" id="GDScript_sl1jc"]
+script/source = "extends Area2D
+@export var velocity = 400
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	body_entered.connect(_on_body_entered)
+
+
+
+func _physics_process(delta):
+	position.y += velocity * delta
+		
+func _on_body_entered(body):
+	if body.is_in_group(\"player\"):
+		body.take_damage()
+
+	queue_free()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(117.5, 122)
@@ -44,7 +63,7 @@ animations = [{
 
 [node name="Obstacle" type="Area2D" unique_id=1822529568]
 position = Vector2(349, 64)
-script = ExtResource("1_sl1jc")
+script = SubResource("GDScript_sl1jc")
 
 [node name="ObstacleHitbox" type="CollisionShape2D" parent="." unique_id=859179225]
 shape = SubResource("RectangleShape2D_7mycd")
@@ -55,4 +74,4 @@ position = Vector2(-6.999998, -16)
 scale = Vector2(14.71875, 15.142857)
 sprite_frames = SubResource("SpriteFrames_c2epm")
 autoplay = "default"
-frame_progress = 0.92733747
+frame_progress = 0.51743406

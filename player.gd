@@ -1,4 +1,7 @@
 extends CharacterBody2D
+
+@onready var playerSprite = $PlayerSprite
+
 var screen_size : Vector2
 var lanes : Array[float]
 var current_lane := 1
@@ -37,7 +40,15 @@ func _input(event):
 	if event.is_action_pressed("move_right"):
 		move_right()
 
-
+func take_damage():
+	for i in range(3):
+		playerSprite.modulate = Color(1,0,0)
+		await get_tree().create_timer(0.1).timeout
+		
+		playerSprite.modulate = Color(1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:		
 	pass
