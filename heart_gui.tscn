@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c3d2wl73avoht"]
+
+[ext_resource type="Texture2D" uid="uid://b6t7ym28w8iil" path="res://assets/HealthUI.png" id="1_1xhc3"]
+[ext_resource type="Script" uid="uid://mlnibxc6beah" path="res://heart_gui.gd" id="1_460sw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_460sw"]
+atlas = ExtResource("1_1xhc3")
+region = Rect2(0, 33, 11, 10.563694)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eruwj"]
+atlas = ExtResource("1_1xhc3")
+region = Rect2(22, 66, 11, 11)
+
+[node name="HeartGUI" type="Panel" unique_id=812721703]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(9, 10)
+offset_right = 59.0
+offset_bottom = 65.55556
+script = ExtResource("1_460sw")
+full_heart = SubResource("AtlasTexture_460sw")
+empty_heart = SubResource("AtlasTexture_eruwj")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=946577713]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

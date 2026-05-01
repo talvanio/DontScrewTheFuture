@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
+signal healthChanged(current_health)
 @onready var playerSprite = $PlayerSprite
 @export var max_health =  4
-var health = max_health
 
+var health:int
 var screen_size : Vector2
 var lanes : Array[float]
 var current_lane := 1
@@ -25,6 +26,7 @@ func move_right() -> void:
 	position.x = lanes[current_lane]
 
 func _ready() -> void:
+	health = max_health
 	screen_size = get_viewport_rect().size
 	var quarter = screen_size.x / 4.0
 
@@ -42,14 +44,15 @@ func _input(event):
 		move_left()
 	if event.is_action_pressed("move_right"):
 		move_right()
+		
 func die():
 	get_tree().change_scene_to_file("res://game_over.tscn")
 
 	
 func take_damage():
 	health = health - 1
-	print("health:",health)
-
+	print("PLAYER:", health)
+	healthChanged.emit(health)
 	if health <= 0:
 		die()
 		return
@@ -61,7 +64,6 @@ func take_damage():
 		playerSprite.modulate = Color(1,1,1)
 		await get_tree().create_timer(0.1).timeout
 		
-
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:		
