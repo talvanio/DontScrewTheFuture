@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c2mfucfa67h4g"]
+
+[ext_resource type="Texture2D" uid="uid://cntrd7bg00lbw" path="res://assets/galaxy.png" id="1_y26ei"]
+[ext_resource type="Script" uid="uid://ccvttkayrnqh6" path="res://game_over.gd" id="1_yxx3c"]
+
+[node name="GameOver" type="Control" unique_id=482132038]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yxx3c")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=574825594]
+modulate = Color(0.26468948, 0.14045013, 0.26468948, 1)
+texture_filter = 1
+position = Vector2(313, 819)
+scale = Vector2(6.617649, 12.883208)
+texture = ExtResource("1_y26ei")
+
+[node name="MainMenu" type="Button" parent="." unique_id=1761514829]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 525.0
+offset_right = 489.0
+offset_bottom = 675.0
+text = "Main Menu
+"
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

@@ -1,4 +1,8 @@
-extends Sprite2D
+extends CharacterBody2D
+
+@onready var playerSprite = $PlayerSprite
+@export var max_health =  4
+var health = max_health
 
 var screen_size : Vector2
 var lanes : Array[float]
@@ -23,6 +27,7 @@ func move_right() -> void:
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	var quarter = screen_size.x / 4.0
+
 	lanes = [
 		quarter * 1,
 		quarter * 2,
@@ -37,7 +42,27 @@ func _input(event):
 		move_left()
 	if event.is_action_pressed("move_right"):
 		move_right()
+func die():
+	get_tree().change_scene_to_file("res://game_over.tscn")
 
+	
+func take_damage():
+	health = health - 1
+	print("health:",health)
+
+	if health <= 0:
+		die()
+		return
+
+	for i in range(3):
+		playerSprite.modulate = Color(1,0,0)
+		await get_tree().create_timer(0.1).timeout
+		
+		playerSprite.modulate = Color(1,1,1)
+		await get_tree().create_timer(0.1).timeout
+		
+
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:		
 	pass
