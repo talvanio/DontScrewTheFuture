@@ -1,6 +1,7 @@
 extends Node2D
 @export var projectile_scene: PackedScene
 @onready var timer = $Timer
+@export var projectile_frequency: float = 1.0
 
 @onready var lanes = [
 	$Lane1Marker,
@@ -9,6 +10,7 @@ extends Node2D
 ]
 
 func _ready():
+	timer.wait_time = projectile_frequency
 	timer.timeout.connect(_on_timer_timeout)
 
 func shoot():

@@ -1,13 +1,14 @@
-[gd_scene format=3 uid="uid://65fgnv0ol1i6"]
+[gd_scene format=3 uid="uid://dpi52wlgkb0ew"]
 
-[ext_resource type="Script" uid="uid://dm653ydyhedps" path="res://obstacle_spawner.gd" id="1_asyhu"]
-[ext_resource type="PackedScene" uid="uid://bj3plhgey2vv7" path="res://obstacle.tscn" id="2_iawrw"]
+[ext_resource type="Script" uid="uid://cupd2jgyapnqo" path="res://obstacle_spawner.gd" id="1_asyhu"]
+[ext_resource type="PackedScene" path="res://obstacle.tscn" id="2_iawrw"]
 
 [node name="ObstacleSpawner" type="Node2D" unique_id=1242993063]
 script = ExtResource("1_asyhu")
 projectile_scene = ExtResource("2_iawrw")
 
 [node name="Timer" type="Timer" parent="." unique_id=1345100961]
+wait_time = 0.7
 autostart = true
 
 [node name="Lane1Marker" type="Marker2D" parent="." unique_id=1904202965]
