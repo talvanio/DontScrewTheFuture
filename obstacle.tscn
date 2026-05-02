@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://bjs5g12lx4x58"]
+[gd_scene format=3 uid="uid://bj3plhgey2vv7"]
 
 [ext_resource type="Texture2D" uid="uid://varmhobtij5p" path="res://assets/bullets.png" id="2_aubd6"]
 
 [sub_resource type="GDScript" id="GDScript_sl1jc"]
 script/source = "extends Area2D
-@export var velocity = 700
+@export var velocity = 400
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

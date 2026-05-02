@@ -1,34 +1,40 @@
-[gd_scene format=3 uid="uid://cvk8y883yi8f4"]
+[gd_scene format=3 uid="uid://dwewc45lbvgxw"]
 
-[ext_resource type="Texture2D" uid="uid://cntrd7bg00lbw" path="res://assets/galaxy.png" id="1_7bnjr"]
-[ext_resource type="Texture2D" uid="uid://qqdyfq5k2gkb" path="res://assets/blue smiling.png" id="2_v31sk"]
+[ext_resource type="Texture2D" uid="uid://dcojxlxq8nlj0" path="res://assets/newgame_btn.png" id="1_7bnjr"]
+[ext_resource type="Script" uid="uid://cj3aek3bf5p03" path="res://victory.gd" id="1_v31sk"]
+[ext_resource type="Texture2D" uid="uid://cydtijyywy12k" path="res://assets/win_eng.png" id="2_qr7ta"]
 
-[sub_resource type="GDScript" id="GDScript_qr7ta"]
-script/source = "extends Node2D
+[node name="Victory" type="Control" unique_id=119484210]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v31sk")
 
+[node name="Background2" type="Sprite2D" parent="." unique_id=1612906887]
+modulate = Color(0.7190777, 0.6281117, 0.6442424, 1)
+light_mask = 4
+position = Vector2(360, 634.5)
+texture = ExtResource("2_qr7ta")
 
-func _on_main_menu_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://main_menu.tscn\")
-"
+[node name="PlayAgainButton" type="Button" parent="." unique_id=696310866]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 808.0
+offset_right = 621.0
+offset_bottom = 957.0
+icon = ExtResource("1_7bnjr")
+expand_icon = true
 
-[node name="Victory" type="Node2D" unique_id=485804038]
-script = SubResource("GDScript_qr7ta")
+[node name="ContentContainer" type="VBoxContainer" parent="." unique_id=1990858479]
+layout_mode = 0
+offset_left = 669.0
+offset_top = 521.0
+offset_right = 1705.0
+offset_bottom = 801.0
+theme_override_constants/separation = 30
+alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=875272710]
-position = Vector2(3085, 4311)
-scale = Vector2(58.525, 59.493057)
-texture = ExtResource("1_7bnjr")
-
-[node name="Smiling" type="Sprite2D" parent="." unique_id=1979055181]
-position = Vector2(345, 499)
-texture = ExtResource("2_v31sk")
-
-[node name="MainMenu" type="Button" parent="." unique_id=2070972605]
-offset_left = 189.0
-offset_top = 525.0
-offset_right = 489.0
-offset_bottom = 675.0
-text = "Main Menu
-"
-
-[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PlayAgainButton" to="." method="_on_play_again_button_pressed"]
