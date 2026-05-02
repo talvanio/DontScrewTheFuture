@@ -33,12 +33,18 @@ func _process(delta: float) -> void:
 		spawner.set_projectile_frequency(
 			spawner.projectile_frequency * 0.8
 		)
-
+		spawner.set_projectile_velocity(
+			spawner.projectile_velocity + spawner.projectile_velocity * 0.3
+		)
+		
 	if elapsed_time > (0.6) * win_time and not phase_2_done:
 		phase_2_done = true
 
 		spawner.set_projectile_frequency(
 			spawner.projectile_frequency * 0.6
+		)
+		spawner.set_projectile_velocity(
+			spawner.projectile_velocity + spawner.projectile_velocity * 0.3
 		)
 func update_progress_bar():
 	var progress = elapsed_time / win_time
