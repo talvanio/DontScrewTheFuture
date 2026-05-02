@@ -1,13 +1,13 @@
-[gd_scene format=4 uid="uid://dp1e477tb3jww"]
+[gd_scene format=4 uid="uid://bf4fy72t8slcw"]
 
 [ext_resource type="Script" uid="uid://d1q48g0ga63wh" path="res://game.gd" id="1_j5wjh"]
-[ext_resource type="PackedScene" uid="uid://65fgnv0ol1i6" path="res://obstacle_spawner.tscn" id="1_ryrav"]
+[ext_resource type="PackedScene" path="res://obstacle_spawner.tscn" id="1_ryrav"]
 [ext_resource type="Script" uid="uid://c15weclbn82g4" path="res://road_container.gd" id="2_eow3j"]
 [ext_resource type="Texture2D" uid="uid://ox20km2l7i8g" path="res://assets/spritesheet_tiles.png" id="3_j5wjh"]
 [ext_resource type="Script" uid="uid://bl85gxvjewpww" path="res://tile_map(road_1).gd" id="4_vef74"]
 [ext_resource type="Script" uid="uid://x2a66nx8l2ch" path="res://player.gd" id="5_hve3p"]
 [ext_resource type="Texture2D" uid="uid://bj8ra4we1pvjc" path="res://icon.svg" id="6_mfdv2"]
-[ext_resource type="PackedScene" uid="uid://b8afrgncfk237" path="res://hearts_container.tscn" id="7_eow3j"]
+[ext_resource type="PackedScene" path="res://hearts_container.tscn" id="7_eow3j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 resource_name = "Carretera"
