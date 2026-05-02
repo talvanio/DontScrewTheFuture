@@ -18069,9 +18069,9 @@ size = Vector2(142, 145)
 
 [node name="Game" type="Node2D" unique_id=882076167]
 script = ExtResource("1_j5wjh")
+win_time = 50.0
 
 [node name="ObstacleSpawner" parent="." unique_id=1242993063 instance=ExtResource("1_ryrav")]
-projectile_frequency = 0.6
 
 [node name="RoadContainer" type="Node2D" parent="." unique_id=1176868592]
 script = ExtResource("2_eow3j")
