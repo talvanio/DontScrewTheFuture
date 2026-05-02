@@ -1,7 +1,7 @@
-[gd_scene format=4 uid="uid://dp1e477tb3jww"]
+[gd_scene format=4 uid="uid://bf4fy72t8slcw"]
 
 [ext_resource type="Script" uid="uid://d1q48g0ga63wh" path="res://game.gd" id="1_j5wjh"]
-[ext_resource type="PackedScene" uid="uid://65fgnv0ol1i6" path="res://obstacle_spawner.tscn" id="1_ryrav"]
+[ext_resource type="PackedScene" uid="uid://dpi52wlgkb0ew" path="res://obstacle_spawner.tscn" id="1_ryrav"]
 [ext_resource type="Script" uid="uid://c15weclbn82g4" path="res://road_container.gd" id="2_eow3j"]
 [ext_resource type="Texture2D" uid="uid://ox20km2l7i8g" path="res://assets/spritesheet_tiles.png" id="3_j5wjh"]
 [ext_resource type="Script" uid="uid://bl85gxvjewpww" path="res://tile_map(road_1).gd" id="4_vef74"]
@@ -18065,10 +18065,11 @@ texture = ExtResource("3_j5wjh")
 sources/0 = SubResource("TileSetAtlasSource_1bvp3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
-size = Vector2(142, 145)
+size = Vector2(142, 191)
 
 [node name="Game" type="Node2D" unique_id=882076167]
 script = ExtResource("1_j5wjh")
+win_time = 50.0
 
 [node name="ObstacleSpawner" parent="." unique_id=1242993063 instance=ExtResource("1_ryrav")]
 
@@ -18089,26 +18090,27 @@ position = Vector2(360, 1000)
 script = ExtResource("5_hve3p")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player" unique_id=1721226036]
-scale = Vector2(0.6, 0.6)
+position = Vector2(1, 3)
+scale = Vector2(0.36429098, 0.36429098)
 texture = ExtResource("7_j5wjh")
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="Player" unique_id=1198130986]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_lquwl")
 debug_color = Color(0.63529414, 0.5294118, 0, 0.49411765)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=107750148]
+
+[node name="WinProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1907476245]
+offset_left = 28.0
+offset_top = 1215.0
+offset_right = 1123.4299
+offset_bottom = 1270.0806
+rotation = 4.712389
+show_percentage = false
 
 [node name="HeartsContainer" parent="CanvasLayer" unique_id=824754877 instance=ExtResource("7_eow3j")]
 offset_left = 22.0
 offset_top = 19.0
 offset_right = 238.0
 offset_bottom = 59.0
-
-[node name="TiempoLabel" type="Label" parent="CanvasLayer" unique_id=1101077505]
-offset_left = 403.0
-offset_top = 30.0
-offset_right = 704.0
-offset_bottom = 99.0
-theme_override_colors/font_color = Color(0.06469653, 0.06469653, 0.06469653, 1)
-theme_override_font_sizes/font_size = 50
-text = "Tiempo: 10 s"

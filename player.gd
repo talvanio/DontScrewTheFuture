@@ -51,7 +51,6 @@ func die():
 	
 func take_damage():
 	health = health - 1
-	print("PLAYER:", health)
 	healthChanged.emit(health)
 	if health <= 0:
 		die()

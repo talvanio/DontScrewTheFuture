@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var speed: float = 400.0
+@export var speed: float = 600.0
 
 @onready var road_1: TileMapLayer = $road_1
 @onready var road_2: TileMapLayer = $road_2
