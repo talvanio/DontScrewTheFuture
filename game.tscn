@@ -18098,6 +18098,14 @@ debug_color = Color(0.63529414, 0.5294118, 0, 0.49411765)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=107750148]
 
+[node name="WinProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1907476245]
+offset_left = 28.0
+offset_top = 1215.0
+offset_right = 1123.4299
+offset_bottom = 1270.0806
+rotation = 4.712389
+show_percentage = false
+
 [node name="HeartsContainer" parent="CanvasLayer" unique_id=824754877 instance=ExtResource("7_eow3j")]
 offset_left = 22.0
 offset_top = 19.0
