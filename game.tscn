@@ -1,11 +1,13 @@
 [gd_scene format=4 uid="uid://dp1e477tb3jww"]
 
+[ext_resource type="Script" uid="uid://d1q48g0ga63wh" path="res://game.gd" id="1_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://65fgnv0ol1i6" path="res://obstacle_spawner.tscn" id="1_ryrav"]
 [ext_resource type="Script" uid="uid://c15weclbn82g4" path="res://road_container.gd" id="2_eow3j"]
 [ext_resource type="Texture2D" uid="uid://ox20km2l7i8g" path="res://assets/spritesheet_tiles.png" id="3_j5wjh"]
 [ext_resource type="Script" uid="uid://bl85gxvjewpww" path="res://tile_map(road_1).gd" id="4_vef74"]
 [ext_resource type="Script" uid="uid://x2a66nx8l2ch" path="res://player.gd" id="5_hve3p"]
 [ext_resource type="Texture2D" uid="uid://bj8ra4we1pvjc" path="res://icon.svg" id="6_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://b8afrgncfk237" path="res://hearts_container.tscn" id="7_eow3j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 resource_name = "Carretera"
@@ -18066,6 +18068,7 @@ sources/0 = SubResource("TileSetAtlasSource_1bvp3")
 size = Vector2(142, 145)
 
 [node name="Game" type="Node2D" unique_id=882076167]
+script = ExtResource("1_j5wjh")
 
 [node name="ObstacleSpawner" parent="." unique_id=1242993063 instance=ExtResource("1_ryrav")]
 
@@ -18092,3 +18095,11 @@ texture = ExtResource("6_mfdv2")
 [node name="PlayerHitbox" type="CollisionShape2D" parent="Player" unique_id=1198130986]
 shape = SubResource("RectangleShape2D_lquwl")
 debug_color = Color(0.63529414, 0.5294118, 0, 0.49411765)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=107750148]
+
+[node name="HeartsContainer" parent="CanvasLayer" unique_id=824754877 instance=ExtResource("7_eow3j")]
+offset_left = 22.0
+offset_top = 19.0
+offset_right = 238.0
+offset_bottom = 59.0
