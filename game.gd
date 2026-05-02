@@ -2,9 +2,12 @@ extends Node2D
 @onready var heartsContainer = $CanvasLayer/HeartsContainer
 @onready var player = $Player
 @onready var progress_bar = $CanvasLayer/WinProgressBar
+@onready var spawner = $ObstacleSpawner
 
 @export var win_time = 10.0
 
+var phase_1_done = false
+var phase_2_done = false
 var elapsed_time = 0.0
 
 # Called when the node enters the scene tree for the first time.
@@ -21,7 +24,22 @@ func _process(delta: float) -> void:
 
 	if elapsed_time >= win_time:
 		win_game()
-		
+
+	elapsed_time += delta
+
+	if elapsed_time > (0.3) * win_time and not phase_1_done:
+		phase_1_done = true
+
+		spawner.set_projectile_frequency(
+			spawner.projectile_frequency * 0.8
+		)
+
+	if elapsed_time > (0.6) * win_time and not phase_2_done:
+		phase_2_done = true
+
+		spawner.set_projectile_frequency(
+			spawner.projectile_frequency * 0.6
+		)
 func update_progress_bar():
 	var progress = elapsed_time / win_time
 

@@ -21,3 +21,8 @@ func shoot():
 
 func _on_timer_timeout():
 	shoot()
+
+
+func set_projectile_frequency(value: float):
+	projectile_frequency = value
+	timer.wait_time = value
