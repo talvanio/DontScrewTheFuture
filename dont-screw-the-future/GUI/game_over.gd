@@ -17,5 +17,5 @@ func _on_texture_button_pressed():
 
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_accept") and visible:
 		restart_pressed.emit()
