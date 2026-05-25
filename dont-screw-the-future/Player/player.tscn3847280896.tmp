@@ -97,7 +97,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"blink",
-"speed": 1.0
+"speed": 35.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -114,7 +114,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"blink_reverse",
-"speed": 1.0
+"speed": 35.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -192,12 +192,16 @@ size = Vector2(96, 160)
 [node name="Player" type="CharacterBody2D" unique_id=219018817 groups=["player"]]
 collision_mask = 2
 script = ExtResource("1_onrkg")
+horizontal_speed = null
+max_health = null
+dash_cooldown = null
+is_dash_disponible = null
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=1221767256 groups=["player"]]
 texture_filter = 1
 scale = Vector2(9.916667, 9.916667)
 sprite_frames = SubResource("SpriteFrames_hqtel")
-animation = &"blink_reverse"
+animation = &"blink"
 autoplay = "walk_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=930151848 groups=["player"]]
