@@ -9,12 +9,10 @@
 
 [node name="Main" type="Node2D" unique_id=947896837]
 script = ExtResource("1_lquwl")
-difficulty_interval = 6
-difficulty_multiplier = 0.95
 
 [node name="RunController" parent="." unique_id=1816630673 instance=ExtResource("1_0xm2m")]
 level_sizes = [999999999, 999999999, 999999999]
-background_speed = 700
+background_speed = 900
 
 [node name="Player" parent="." unique_id=835367350 instance=ExtResource("1_ig7tw")]
 position = Vector2(548, 1632)

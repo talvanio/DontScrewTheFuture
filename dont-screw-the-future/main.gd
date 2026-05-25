@@ -1,8 +1,8 @@
 extends Node2D
 #
 var difficulty_timer := 0.0
-@export var difficulty_interval := 4
-@export var difficulty_multiplier := 0.9
+@export var difficulty_interval := 6
+@export var difficulty_multiplier := 0.95
 #
 @onready var player = $Player
 @onready var hearts_container = $HeartsContainer
