@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cs7xf76pnwv31"]
+
+[ext_resource type="PackedScene" uid="uid://civewwlqrsdn7" path="res://run-controller.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://depp85d4qeby2" path="res://player.tscn" id="1_ig7tw"]
+
+[node name="Main" type="Node2D" unique_id=947896837]
+
+[node name="RunController" parent="." unique_id=1816630673 instance=ExtResource("1_0xm2m")]
+
+[node name="Player" parent="." unique_id=835367350 instance=ExtResource("1_ig7tw")]
+position = Vector2(548, 1632)

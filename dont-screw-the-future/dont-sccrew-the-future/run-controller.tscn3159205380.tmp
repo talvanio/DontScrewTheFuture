@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://civewwlqrsdn7"]
+
+[ext_resource type="Script" uid="uid://2g2rxmeova8" path="res://run-controller.gd" id="1_bmwgd"]
+
+[node name="RunController" type="Node2D" unique_id=1816630673]
+script = ExtResource("1_bmwgd")
+levels_size = []
