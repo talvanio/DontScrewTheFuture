@@ -21,7 +21,7 @@ func spawn_projectile():
 	
 	var screen_width = get_viewport_rect().size.x
 
-	var sprite_width = 32 # ou pega dinamicamente depois
+	var sprite_width = 32
 	var x = randf_range(0, screen_width - sprite_width)
 
 	projectile.position = Vector2(x, position.y)

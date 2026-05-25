@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://chscirudyikvl" path="res://projectiles/projectile_generator.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://h85wb5gixxec" path="res://interfaces/hearts_container.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://c1t12jvkxbig2" path="res://interfaces/game_over.tscn" id="6_7mycd"]
-[ext_resource type="Script" uid="uid://w7tnr684jm1i" path="res://dash_ui.gd" id="7_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bqe2skjiio1wv" path="res://interfaces/dash icon.png" id="7_272bh"]
 
 [node name="Main" type="Node2D" unique_id=947896837]
@@ -34,19 +33,11 @@ offset_right = 492.9748
 offset_bottom = 166.65
 scale = Vector2(1.7, 1.7)
 
-[node name="DashUI" type="TextureProgressBar" parent="Interface" unique_id=993970215]
-offset_left = 40.0
-offset_top = 1650.0
-offset_right = 552.0
-offset_bottom = 2162.0
-scale = Vector2(0.35, 0.35)
-step = 0.01
+[node name="Dash" type="TextureProgressBar" parent="Interface" unique_id=993970215]
+offset_right = 512.0
+offset_bottom = 512.0
 fill_mode = 3
-texture_under = ExtResource("7_272bh")
 texture_progress = ExtResource("7_272bh")
-tint_under = Color(0, 0, 0, 0.3137255)
-tint_progress = Color(0, 0, 0, 0.73333335)
-script = ExtResource("7_5vw27")
 
 [node name="GameOver" parent="Interface" unique_id=2069756276 instance=ExtResource("6_7mycd")]
 visible = false

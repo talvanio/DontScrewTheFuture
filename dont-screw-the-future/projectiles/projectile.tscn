@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://b0o1vnf8ajcu5"]
 
 [ext_resource type="Script" uid="uid://bmhgpy4k7ffu1" path="res://projectiles/projectile.gd" id="1_dgwo2"]
-[ext_resource type="Texture2D" uid="uid://bwbjrdc2v38vk" path="res://assets/projectiles/icon.svg" id="1_qxf0c"]
+[ext_resource type="Texture2D" uid="uid://bkt3vgsui1c4e" path="res://assets/projectiles/Interiors_free_16x16.png" id="2_7nr1q"]
 [ext_resource type="Texture2D" uid="uid://2l3ae1c704id" path="res://assets/effects/circular-explosion.png" id="3_dgwo2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dgwo2"]
-radius = 82.41911
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ypqm"]
+atlas = ExtResource("2_7nr1q")
+region = Rect2(192, 641, 15, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nr1q"]
+size = Vector2(19.62963, 39.77469)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxmqc"]
 atlas = ExtResource("3_dgwo2")
@@ -76,13 +80,16 @@ scale = Vector2(1.35, 1.35)
 collision_layer = 2
 script = ExtResource("1_dgwo2")
 
-[node name="ProjectileShape" type="CollisionShape2D" parent="." unique_id=543560925]
-position = Vector2(0.5, -1)
-shape = SubResource("CircleShape2D_dgwo2")
-debug_color = Color(1, 0, 0.32941177, 0.5372549)
-
 [node name="ProjectileSprite" type="Sprite2D" parent="." unique_id=1215566836]
-texture = ExtResource("1_qxf0c")
+texture_filter = 1
+scale = Vector2(8.417051, 8.417052)
+texture = SubResource("AtlasTexture_7ypqm")
+
+[node name="ProjectileShape" type="CollisionShape2D" parent="." unique_id=543560925]
+position = Vector2(0.37037107, 2.1574059)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_7nr1q")
+debug_color = Color(1, 0, 0.32941177, 0.5372549)
 
 [node name="Explosion" type="AnimatedSprite2D" parent="." unique_id=836310433]
 texture_filter = 1

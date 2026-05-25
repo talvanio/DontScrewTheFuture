@@ -3,12 +3,14 @@ extends Node2D
 var difficulty_timer := 0.0
 @export var difficulty_interval := 6
 @export var difficulty_multiplier := 0.95
-#
 @onready var player = $Player
-@onready var hearts_container = $HeartsContainer
+@onready var hearts_container = $Interface/HeartsContainer
 @onready var run_controller = $RunController
-@onready var game_over_screen = $GameOver
+@onready var game_over_screen = $Interface/GameOver
+@onready var dash_ui = $Interface/DashUI
 @export var player_max_health = 4
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	game_over_screen.visible = false
@@ -16,6 +18,7 @@ func _ready() -> void:
 	player.health_changed.connect(hearts_container.update_hearts)
 	hearts_container.set_max_hearts(player_max_health)
 	game_over_screen.restart_pressed.connect(_on_restart)
+	player.dash_used.connect(dash_ui.start_cooldown)
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
