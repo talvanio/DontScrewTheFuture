@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b0o1vnf8ajcu5"]
 
-[ext_resource type="Script" uid="uid://bmhgpy4k7ffu1" path="res://projectile.gd" id="1_dgwo2"]
-[ext_resource type="Texture2D" uid="uid://bwbjrdc2v38vk" path="res://icon.svg" id="1_qxf0c"]
-[ext_resource type="Texture2D" uid="uid://2l3ae1c704id" path="res://resources/effects/circular-explosion.png" id="3_dgwo2"]
+[ext_resource type="Script" uid="uid://bmhgpy4k7ffu1" path="res://projectiles/projectile.gd" id="1_dgwo2"]
+[ext_resource type="Texture2D" uid="uid://bwbjrdc2v38vk" path="res://assets/projectiles/icon.svg" id="1_qxf0c"]
+[ext_resource type="Texture2D" uid="uid://2l3ae1c704id" path="res://assets/effects/circular-explosion.png" id="3_dgwo2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dgwo2"]
 radius = 82.41911

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cttvsbsw2367i"
-path="res://.godot/imported/explosion.png-c3e4d408c6a87cd1a8db4b84e4d2b50d.ctex"
+uid="uid://cho6far0okj5t"
+path="res://.godot/imported/Grass.png-11fc3a744f05fb10bf35dc1a9ffc6f17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/effects/explosion.png"
-dest_files=["res://.godot/imported/explosion.png-c3e4d408c6a87cd1a8db4b84e4d2b50d.ctex"]
+source_file="res://assets/scenery/Grass.png"
+dest_files=["res://.godot/imported/Grass.png-11fc3a744f05fb10bf35dc1a9ffc6f17.ctex"]
 
 [params]
 

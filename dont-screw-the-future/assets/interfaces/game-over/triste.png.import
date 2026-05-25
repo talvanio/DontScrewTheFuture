@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnpxu86m34ql6"
-path="res://.godot/imported/gatito.png-7dc753bda03bc603aec6b83170243494.ctex"
+uid="uid://bqu7cyn2h0fs5"
+path="res://.godot/imported/triste.png-68b74f8c4074f6f67232d05b3fef9219.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/player/gatito.png"
-dest_files=["res://.godot/imported/gatito.png-7dc753bda03bc603aec6b83170243494.ctex"]
+source_file="res://assets/interfaces/game-over/triste.png"
+dest_files=["res://.godot/imported/triste.png-68b74f8c4074f6f67232d05b3fef9219.ctex"]
 
 [params]
 

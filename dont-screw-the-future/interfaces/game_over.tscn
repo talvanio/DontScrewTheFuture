@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c1t12jvkxbig2"]
 
-[ext_resource type="Texture2D" uid="uid://bqu7cyn2h0fs5" path="res://resources/UI/game-over/triste.png" id="1_bax71"]
-[ext_resource type="Script" uid="uid://c1v40e7q6dkib" path="res://GUI/game_over.gd" id="1_svlec"]
-[ext_resource type="Texture2D" uid="uid://b4p4iyoqtnuuv" path="res://resources/UI/game-over/button_try-again.png" id="2_svlec"]
+[ext_resource type="Texture2D" uid="uid://bqu7cyn2h0fs5" path="res://assets/interfaces/game-over/triste.png" id="1_bax71"]
+[ext_resource type="Script" uid="uid://c1v40e7q6dkib" path="res://interfaces/game_over.gd" id="1_svlec"]
+[ext_resource type="Texture2D" uid="uid://b4p4iyoqtnuuv" path="res://assets/interfaces/game-over/button_try-again.png" id="2_svlec"]
 
 [node name="GameOver" type="CanvasLayer" unique_id=2069756276]
 process_mode = 3

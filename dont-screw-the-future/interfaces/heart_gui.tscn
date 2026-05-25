@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://13xolqobdw41"]
 
-[ext_resource type="Script" uid="uid://mlnibxc6beah" path="res://heart_gui.gd" id="1_460sw"]
-[ext_resource type="Texture2D" uid="uid://dpuq1s2mo5e2q" path="res://resources/UI/Health.png" id="2_460sw"]
+[ext_resource type="Script" uid="uid://mlnibxc6beah" path="res://interfaces/heart_gui.gd" id="1_460sw"]
+[ext_resource type="Texture2D" uid="uid://dpuq1s2mo5e2q" path="res://assets/interfaces/Health.png" id="2_460sw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_460sw"]
 atlas = ExtResource("2_460sw")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpuq1s2mo5e2q"
-path="res://.godot/imported/Health.png-f6730ec9ea10deec5c77f9b5d343c135.ctex"
+uid="uid://2l3ae1c704id"
+path="res://.godot/imported/circular-explosion.png-d988df93c9b1c720273036d3c1a36f72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/UI/Health.png"
-dest_files=["res://.godot/imported/Health.png-f6730ec9ea10deec5c77f9b5d343c135.ctex"]
+source_file="res://assets/effects/circular-explosion.png"
+dest_files=["res://.godot/imported/circular-explosion.png-d988df93c9b1c720273036d3c1a36f72.ctex"]
 
 [params]
 

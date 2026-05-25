@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhq4t5ou2twmn"
-path="res://.godot/imported/16x16 Run-Sheet-Left.png-fa178606eed9af3ac248b3d63bd63347.ctex"
+uid="uid://bjocivlbwnobv"
+path="res://.godot/imported/16x16 Run-Sheet.png-ec6c4ea531f4374386be481ab86a49dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/player/16x16 Run-Sheet-Left.png"
-dest_files=["res://.godot/imported/16x16 Run-Sheet-Left.png-fa178606eed9af3ac248b3d63bd63347.ctex"]
+source_file="res://assets/player/16x16 Run-Sheet.png"
+dest_files=["res://.godot/imported/16x16 Run-Sheet.png-ec6c4ea531f4374386be481ab86a49dc.ctex"]
 
 [params]
 

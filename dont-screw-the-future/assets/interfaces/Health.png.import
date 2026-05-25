@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqu7cyn2h0fs5"
-path="res://.godot/imported/triste.png-6ea98bbaab76e0a0c627ed93c60a8835.ctex"
+uid="uid://dpuq1s2mo5e2q"
+path="res://.godot/imported/Health.png-eaab9fc1dcfd89e51c1a95bd72459bc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/UI/game-over/triste.png"
-dest_files=["res://.godot/imported/triste.png-6ea98bbaab76e0a0c627ed93c60a8835.ctex"]
+source_file="res://assets/interfaces/Health.png"
+dest_files=["res://.godot/imported/Health.png-eaab9fc1dcfd89e51c1a95bd72459bc3.ctex"]
 
 [params]
 
