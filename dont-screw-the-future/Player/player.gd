@@ -6,10 +6,9 @@ extends Node2D
 @onready var current_health: int = max_health
 
 @export var dash_cooldown: float = 2.5
-@export var is_dash_disponible: bool = true
+@export var dash_on_cooldown: bool = false
 var blinking := false
 var viewport_size: Vector2
-var invincible := false
 
 var is_dashing := false
 signal dash_used(cooldown)
@@ -19,98 +18,66 @@ const DASH_DISTANCE = 350
 
 
 func _process(delta: float) -> void:
-	var dir = get_input_dir()
+	var player_input = get_player_input()
 	
-	if Input.is_key_pressed(KEY_SHIFT) or Input.is_key_pressed(KEY_SPACE) and is_dash_disponible:
-		dash(dir)
-	if !is_dashing:
-		move_player_x_within_boundaries(position.x + dir * horizontal_speed * delta)
-		play_directed_animation(dir)
+	if player_input.dash:
+		dash_if_disponible(player_input.dir)
 
-func get_input_dir() -> int:
-	var dir := 0
-	if Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_LEFT):
-		dir -= 1
-	if Input.is_key_pressed(KEY_D) or Input.is_key_pressed(KEY_RIGHT):
-		dir += 1
-	return dir
+	move_player_x_within_boundaries(position.x + player_input.dir * horizontal_speed * delta)
+	play_directed_animation(player_input.dir)
+
+
+func get_player_input() -> Dictionary:
+	return {
+		"dir": Input.get_axis("move_left", "move_right"),
+		"dash": Input.is_action_just_pressed("dash")
+	}
 
 func play_directed_animation(dir):
-	if is_dashing:
-		return
+	var animation := "walk_up"
+
 	if dir < 0:
-		sprite.play("walk_left")
+		animation = "walk_left"
 	elif dir > 0:
-		sprite.play("walk_right")
-	else:
-		sprite.play("walk_up")
+		animation = "walk_right"
+	# Don't restart the animation each process()
+	if sprite.animation != animation:
+		sprite.play(animation)
 
 
-	
-func take_damage(damage: int) -> void:
-	if invincible:
-		return
-	current_health -= damage
-	current_health = max(current_health, 0)
-	emit_signal("health_changed", current_health)
-	blink_red()
-
-func set_dash_disponibility(value: bool):
-	is_dash_disponible = value
-	emit_signal("dash_disponibility_changed", value)
-
-func dash(dir):
+func dash_if_disponible(dir):
 	if !can_dash(dir):
 		return
-	
-	start_dash(dir)
-	await dash_movement(dir)
+
+	set_dash_on_cooldown()
+	await start_dash(dir)
+	move_player_x_within_boundaries(position.x + DASH_DISTANCE * dir)
 	await dash_end()
-	
+
 func start_dash(dir):
-	is_dash_disponible = false
 	is_dashing = true
-	invincible = true
 	$CollisionShape2D.disabled = true
-
-	emit_signal("dash_used", dash_cooldown)
 	sprite.play("blink")
+	await sprite.animation_finished
 
-func dash_movement(dir):
-	var target_x = position.x + DASH_DISTANCE * dir
-	
-	var tween = create_tween()
-	tween.tween_property(sprite, "modulate:a", 0.0, 0.05)
-	await tween.finished
-	
-	position.x = target_x
-	
-	await get_tree().create_timer(0.08).timeout
-	
-	var tween2 = create_tween()
-	tween2.tween_property(sprite, "modulate:a", 1.0, 0.05)
-	await tween2.finished
-	
 func can_dash(dir) -> bool:
-	return is_dash_disponible and dir != 0
-	
+	return (
+		dir != 0
+		and !is_dashing
+		and !dash_on_cooldown
+	)
+
 func dash_end():
 	sprite.play("blink_reverse")
+	await sprite.animation_finished
 	is_dashing = false
-	invincible = false
-	$CollisionShape2D.disabled = true
+	$CollisionShape2D.disabled = false
 
-
-	
-	await get_tree().create_timer(dash_cooldown).timeout
-	is_dash_disponible = true
-	
 func move_player_x_within_boundaries(new_x: float) -> void:
 	var viewport_size = get_viewport_rect().size
 	var extents = $CollisionShape2D.shape.size.x * 0.5
 	position.x = clamp(new_x, extents, viewport_size.x - extents)	
 
-	
 func blink_red():
 	if blinking:
 		return
@@ -121,3 +88,15 @@ func blink_red():
 		sprite.modulate = Color(1, 1, 1) # normal
 		await get_tree().create_timer(0.1).timeout
 	blinking = false
+
+func set_dash_on_cooldown():
+	dash_on_cooldown = true
+	emit_signal("dash_used", dash_cooldown)
+	await get_tree().create_timer(dash_cooldown).timeout
+	dash_on_cooldown = false
+
+func take_damage(damage: int) -> void:
+	current_health -= damage
+	current_health = max(current_health, 0)
+	emit_signal("health_changed", current_health)
+	blink_red()

@@ -13,8 +13,8 @@
 script = ExtResource("1_lquwl")
 
 [node name="RunController" parent="." unique_id=1816630673 instance=ExtResource("1_0xm2m")]
-level_sizes = [999999999, 999999999, 999999999]
-background_speed = 900
+level_sizes = [1500, 999999999, 999999999]
+background_speed = 1200
 
 [node name="Player" parent="." unique_id=835367350 instance=ExtResource("1_ig7tw")]
 position = Vector2(548, 1632)
