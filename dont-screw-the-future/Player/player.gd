@@ -24,7 +24,8 @@ func _process(delta: float) -> void:
 		dash_if_disponible(player_input.dir)
 
 	move_player_x_within_boundaries(position.x + player_input.dir * horizontal_speed * delta)
-	play_directed_animation(player_input.dir)
+	if !is_dashing:
+		play_directed_animation(player_input.dir)
 
 
 func get_player_input() -> Dictionary:
