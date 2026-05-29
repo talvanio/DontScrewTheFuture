@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c1t12jvkxbig2"]
+
+[ext_resource type="Texture2D" uid="uid://bqu7cyn2h0fs5" path="res://assets/interfaces/game-over/triste.png" id="1_bax71"]
+[ext_resource type="Script" uid="uid://c1v40e7q6dkib" path="res://interfaces/game_over.gd" id="1_svlec"]
+[ext_resource type="Texture2D" uid="uid://b4p4iyoqtnuuv" path="res://assets/interfaces/game-over/button_try-again.png" id="2_svlec"]
+
+[node name="GameOver" type="CanvasLayer" unique_id=2069756276]
+process_mode = 3
+script = ExtResource("1_svlec")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1160364331]
+position = Vector2(540, 530)
+scale = Vector2(2.2125, 1.9413146)
+texture = ExtResource("1_bax71")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1798076813]
+offset_left = 270.0
+offset_top = 1300.0
+offset_right = 490.0
+offset_bottom = 1366.0
+scale = Vector2(2.5, 2.5)
+action_mode = 0
+texture_normal = ExtResource("2_svlec")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

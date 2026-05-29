@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://chscirudyikvl"]
+
+[ext_resource type="Script" uid="uid://dllau2q8trxyu" path="res://projectiles/projectile_generator.gd" id="1_o0gfj"]
+[ext_resource type="PackedScene" uid="uid://b0o1vnf8ajcu5" path="res://projectiles/projectile.tscn" id="2_tka1s"]
+
+[node name="ProjectileGenerator" type="Node2D" unique_id=1539915995]
+script = ExtResource("1_o0gfj")
+projectile_scene = ExtResource("2_tka1s")

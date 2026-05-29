@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bhb1u4o1y8ffw"]
+
+[ext_resource type="Texture2D" uid="uid://bwbjrdc2v38vk" path="res://assets/projectiles/icon.svg" id="1_f0w44"]
+[ext_resource type="Script" uid="uid://6fbq8v0oesmu" path="res://projectiles/mini_boss.gd" id="1_kggl3"]
+[ext_resource type="PackedScene" uid="uid://c3tubj63r8ln0" path="res://projectiles/BossProjectile.tscn" id="2_8r0ax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kggl3"]
+size = Vector2(130, 128)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=973642175]
+script = ExtResource("1_kggl3")
+projectile_scene = ExtResource("2_8r0ax")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=111283761]
+texture = ExtResource("1_f0w44")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=110263623]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_kggl3")
+
+[node name="Timer" type="Timer" parent="." unique_id=439740112]
+wait_time = 1.5
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1640677212]
+position = Vector2(2, 66)
