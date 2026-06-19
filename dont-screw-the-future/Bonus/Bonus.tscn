@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b0y0v4jvuc4al"]
+
+[ext_resource type="Texture2D" uid="uid://44gqlw6g8ut1" path="res://pngwing.com(11).png" id="1_amsn6"]
+[ext_resource type="Script" uid="uid://623dhw4cuyu7" path="res://Bonus/bonus.gd" id="1_ypwlb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ypwlb"]
+radius = 77.0
+height = 154.0
+
+[node name="Life" type="Area2D" unique_id=334325083]
+script = ExtResource("1_ypwlb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1648741395]
+position = Vector2(3.0517578e-05, -0.9999695)
+scale = Vector2(0.22051282, 0.21391752)
+texture = ExtResource("1_amsn6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1574082895]
+position = Vector2(-3, -18)
+shape = SubResource("CapsuleShape2D_ypwlb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
