@@ -7,7 +7,11 @@ extends Node2D
 @export var rotation_step := 15.0
 @export var rotation_interval := 0.15
 @export var vertical_speed : float = 40.0
-
+var time := 0.0
+var sine_motion := false
+var sine_amplitude := 400
+var sine_frequency := 0.8
+var initial_x
 var rotation_timer := 0.0
 
 func _ready():
@@ -17,10 +21,12 @@ func _ready():
 	explosion_player.visible = false
 
 func _process(delta):
+	time += delta
 	position.y += delta * vertical_speed
 	rotation_timer += delta
-
-	if rotation_timer >= rotation_interval:
+	if sine_motion:
+		position.x = initial_x + sin(time * sine_frequency) * sine_amplitude
+	elif rotation_timer >= rotation_interval:
 		rotation_timer = 0.0
 		
 		projectile_sprite.rotation_degrees += rotation_step

@@ -11,6 +11,7 @@ var difficulty_timer := 0.0
 @export var player_max_health = 4
 @onready var distance_label = $Interface/DistanceLabel
 @onready var game_over_distance = $Interface/GameOver/DistanceLabel
+@onready var projectile_generator = $ProjectileGenerator
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,6 +32,8 @@ func _process(delta: float) -> void:
 		if difficulty_timer >= difficulty_interval:
 			difficulty_timer = 0.0
 			increase_difficulty()
+		if run_controller.distance >= 10000:
+			projectile_generator.enable_sine_projectiles = true
 	else:
 		run_game_over()
 

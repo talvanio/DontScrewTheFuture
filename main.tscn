@@ -54,10 +54,6 @@ script = ExtResource("7_5vw27")
 [node name="GameOver" parent="Interface" unique_id=2069756276 instance=ExtResource("6_7mycd")]
 visible = false
 
-[node name="DistanceLabel" type="Label" parent="Interface/GameOver" unique_id=817139684]
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="DistanceLabel" type="Label" parent="Interface" unique_id=171795809]
 offset_left = 597.0
 offset_top = 78.0
