@@ -9,7 +9,8 @@ var difficulty_timer := 0.0
 @onready var game_over_screen = $Interface/GameOver
 @onready var dash_ui = $Interface/DashUI
 @export var player_max_health = 4
-
+@onready var distance_label = $Interface/DistanceLabel
+@onready var game_over_distance = $Interface/GameOver/DistanceLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,6 +26,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if player.current_health > 0:
 		difficulty_timer += delta
+		distance_label.text = "Puntaje: %d" % (int(run_controller.distance / 400) * 50)
 
 		if difficulty_timer >= difficulty_interval:
 			difficulty_timer = 0.0
@@ -39,6 +41,7 @@ func _on_restart():
 
 func run_game_over() -> void:
 	get_tree().paused = true
+	game_over_distance.text = "Distância percorrida: %dm" % int(run_controller.distance)
 	game_over_screen.visible = true
 
 

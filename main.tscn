@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://cs7xf76pnwv31"]
 
 [ext_resource type="PackedScene" uid="uid://civewwlqrsdn7" path="res://runController/run-controller.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://depp85d4qeby2" path="res://player/player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://depp85d4qeby2" path="res://Player/player.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://diaaikjpfiaw4" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://chscirudyikvl" path="res://projectiles/projectile_generator.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://h85wb5gixxec" path="res://interfaces/hearts_container.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://c1t12jvkxbig2" path="res://interfaces/game_over.tscn" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://w7tnr684jm1i" path="res://dash_ui.gd" id="7_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bqe2skjiio1wv" path="res://interfaces/dash icon.png" id="7_272bh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5vw27"]
+font_size = 60
 
 [node name="Main" type="Node2D" unique_id=947896837]
 script = ExtResource("1_lquwl")
@@ -50,3 +53,14 @@ script = ExtResource("7_5vw27")
 
 [node name="GameOver" parent="Interface" unique_id=2069756276 instance=ExtResource("6_7mycd")]
 visible = false
+
+[node name="DistanceLabel" type="Label" parent="Interface/GameOver" unique_id=817139684]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="DistanceLabel" type="Label" parent="Interface" unique_id=171795809]
+offset_left = 597.0
+offset_top = 78.0
+offset_right = 1083.0
+offset_bottom = 147.0
+label_settings = SubResource("LabelSettings_5vw27")
