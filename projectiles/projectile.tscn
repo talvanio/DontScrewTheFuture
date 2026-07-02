@@ -1,12 +1,8 @@
 [gd_scene format=3 uid="uid://b0o1vnf8ajcu5"]
 
 [ext_resource type="Script" uid="uid://bmhgpy4k7ffu1" path="res://projectiles/projectile.gd" id="1_dgwo2"]
-[ext_resource type="Texture2D" uid="uid://bkt3vgsui1c4e" path="res://assets/projectiles/Interiors_free_16x16.png" id="2_7nr1q"]
+[ext_resource type="Texture2D" uid="uid://bjc1wqlkgd35q" path="res://assets/projectiles/pngwing.com(13).png" id="2_7nr1q"]
 [ext_resource type="Texture2D" uid="uid://2l3ae1c704id" path="res://assets/effects/circular-explosion.png" id="3_dgwo2"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ypqm"]
-atlas = ExtResource("2_7nr1q")
-region = Rect2(192, 641, 15, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nr1q"]
 size = Vector2(19.62963, 39.77469)
@@ -82,8 +78,9 @@ script = ExtResource("1_dgwo2")
 
 [node name="ProjectileSprite" type="Sprite2D" parent="." unique_id=1215566836]
 texture_filter = 1
-scale = Vector2(8.417051, 8.417052)
-texture = SubResource("AtlasTexture_7ypqm")
+position = Vector2(0.4751873, 1.0063553)
+scale = Vector2(0.12059967, 0.22910674)
+texture = ExtResource("2_7nr1q")
 
 [node name="ProjectileShape" type="CollisionShape2D" parent="." unique_id=543560925]
 position = Vector2(0.37037107, 2.1574059)

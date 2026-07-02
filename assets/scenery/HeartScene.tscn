@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cc3o8iacged1u"]
+
+[ext_resource type="Texture2D" uid="uid://1glx7ct8a1ok" path="res://assets/scenery/pngwing.com(12).png" id="1_85jw0"]
+[ext_resource type="Script" uid="uid://bugoau5t40awb" path="res://assets/scenery/heart_scene.gd" id="1_becfv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_becfv"]
+radius = 72.00694
+
+[node name="Area2D" type="Area2D" unique_id=667404670]
+script = ExtResource("1_becfv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1184425961]
+position = Vector2(1.0000305, -3.0000153)
+scale = Vector2(0.225, 0.2260062)
+texture = ExtResource("1_85jw0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=41176350]
+position = Vector2(-1, -11)
+shape = SubResource("CircleShape2D_becfv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

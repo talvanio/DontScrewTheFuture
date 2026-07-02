@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://b15tagv2fps6f"]
+
+[ext_resource type="FontFile" uid="uid://g71mqda1v1jg" path="res://assets/fonts/ARCADECLASSIC.TTF" id="1_lhvch"]
+[ext_resource type="Script" uid="uid://bq0k4wfhcbfj8" path="res://assets/scenery/menu_principal.gd" id="1_nckop"]
+[ext_resource type="Texture2D" uid="uid://dgqswad50tvva" path="res://assets/scenery/Gemini_Generated_Image_jlnam8jlnam8jlna.png" id="2_4hdxv"]
+
+[node name="MenuPrincipal" type="CanvasLayer" unique_id=367633014]
+script = ExtResource("1_nckop")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=1587260325]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4hdxv")
+
+[node name="ContenedorMenu" type="VBoxContainer" parent="." unique_id=65069616]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Titulo" type="Label" parent="ContenedorMenu" unique_id=1513538325]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_lhvch")
+theme_override_font_sizes/font_size = 80
+text = "DON´T SCREW   THE    FUTURE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonJugar" type="Button" parent="ContenedorMenu" unique_id=451296929]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_lhvch")
+theme_override_font_sizes/font_size = 62
+text = "JUGAR"
+icon_alignment = 1
+
+[node name="ButtonTutorial" type="Button" parent="ContenedorMenu" unique_id=1157233658]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_lhvch")
+theme_override_font_sizes/font_size = 62
+text = "TUTORIAL"
+
+[node name="ButtonSalir" type="Button" parent="ContenedorMenu" unique_id=257287479]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_lhvch")
+theme_override_font_sizes/font_size = 62
+text = "SALIR"
+
+[connection signal="pressed" from="ContenedorMenu/ButtonJugar" to="." method="_on_button_jugar_pressed"]
+[connection signal="pressed" from="ContenedorMenu/ButtonTutorial" to="." method="_on_button_tutorial_pressed"]
+[connection signal="pressed" from="ContenedorMenu/ButtonSalir" to="." method="_on_button_salir_pressed"]

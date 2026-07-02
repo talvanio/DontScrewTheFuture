@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="DontScrewTheFuture"
-run/main_scene="uid://cs7xf76pnwv31"
+run/main_scene="uid://b15tagv2fps6f"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/projectiles/icon.svg"
+
+[autoload]
+
+MenuPausa="*uid://c2154h5nyns1v"
 
 [display]
 

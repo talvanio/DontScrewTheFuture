@@ -4,7 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://depp85d4qeby2" path="res://Player/player.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://diaaikjpfiaw4" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://chscirudyikvl" path="res://projectiles/projectile_generator.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://du7363msllox7" path="res://runController/run_controller.gd" id="3_kek77"]
 [ext_resource type="PackedScene" uid="uid://h85wb5gixxec" path="res://interfaces/hearts_container.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cc3o8iacged1u" path="res://assets/scenery/HeartScene.tscn" id="4_4c57u"]
 [ext_resource type="PackedScene" uid="uid://c1t12jvkxbig2" path="res://interfaces/game_over.tscn" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://w7tnr684jm1i" path="res://dash_ui.gd" id="7_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bqe2skjiio1wv" path="res://interfaces/dash icon.png" id="7_272bh"]
@@ -16,8 +18,8 @@ font_size = 60
 script = ExtResource("1_lquwl")
 
 [node name="RunController" parent="." unique_id=1816630673 instance=ExtResource("1_0xm2m")]
-level_sizes = [1500, 999999999, 999999999]
-background_speed = 1200
+script = ExtResource("3_kek77")
+corazon_scene = ExtResource("4_4c57u")
 
 [node name="Player" parent="." unique_id=835367350 instance=ExtResource("1_ig7tw")]
 position = Vector2(548, 1632)
