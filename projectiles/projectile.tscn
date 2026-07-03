@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bjc1wqlkgd35q" path="res://assets/projectiles/pngwing.com(13).png" id="2_7nr1q"]
 [ext_resource type="Texture2D" uid="uid://2l3ae1c704id" path="res://assets/effects/circular-explosion.png" id="3_dgwo2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nr1q"]
-size = Vector2(19.62963, 39.77469)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7nr1q"]
+radius = 7.1090746
+height = 37.201675
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxmqc"]
 atlas = ExtResource("3_dgwo2")
@@ -83,12 +84,14 @@ scale = Vector2(0.12059967, 0.22910674)
 texture = ExtResource("2_7nr1q")
 
 [node name="ProjectileShape" type="CollisionShape2D" parent="." unique_id=543560925]
-position = Vector2(0.37037107, 2.1574059)
+position = Vector2(5.1851854, 7.407407)
+rotation = 0.44854963
 scale = Vector2(6, 6)
-shape = SubResource("RectangleShape2D_7nr1q")
+shape = SubResource("CapsuleShape2D_7nr1q")
 debug_color = Color(1, 0, 0.32941177, 0.5372549)
 
 [node name="Explosion" type="AnimatedSprite2D" parent="." unique_id=836310433]
+visible = false
 texture_filter = 1
 scale = Vector2(5.5911665, 5.5911665)
 sprite_frames = SubResource("SpriteFrames_1umjp")

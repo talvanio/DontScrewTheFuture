@@ -1,7 +1,7 @@
 extends Node2D
 
-# Le clavamos una velocidad fija de 500 solo para el tutorial sin depender del padre
-var speed : float = 500.0
+@onready var run_controller = get_parent()
+@onready var speed : float = run_controller.background_speed
 @onready var a = $BackgroundDetails
 @onready var b = $BackgroundDetails2
 

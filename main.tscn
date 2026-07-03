@@ -19,6 +19,8 @@ script = ExtResource("1_lquwl")
 
 [node name="RunController" parent="." unique_id=1816630673 instance=ExtResource("1_0xm2m")]
 script = ExtResource("3_kek77")
+level_sizes = [999999999, 999999999, 999999999]
+background_speed = 1200
 corazon_scene = ExtResource("4_4c57u")
 
 [node name="Player" parent="." unique_id=835367350 instance=ExtResource("1_ig7tw")]

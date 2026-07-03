@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b0o1vnf8ajcu5" path="res://projectiles/projectile.tscn" id="2_bhfnd"]
 [ext_resource type="PackedScene" uid="uid://depp85d4qeby2" path="res://Player/player.tscn" id="3_bhfnd"]
 [ext_resource type="PackedScene" uid="uid://chscirudyikvl" path="res://projectiles/projectile_generator.tscn" id="4_tvjhf"]
+[ext_resource type="Script" uid="uid://drebjvnwuua41" path="res://runController/run_controller_tutorial.gd" id="4_vmw6g"]
 [ext_resource type="PackedScene" uid="uid://h85wb5gixxec" path="res://interfaces/hearts_container.tscn" id="5_vmw6g"]
 [ext_resource type="Texture2D" uid="uid://bqe2skjiio1wv" path="res://interfaces/dash icon.png" id="6_4hjyh"]
 [ext_resource type="Script" uid="uid://w7tnr684jm1i" path="res://dash_ui.gd" id="7_bsk3x"]
@@ -19,6 +20,7 @@ script = ExtResource("1_7vrqn")
 pancho_scene = ExtResource("2_bhfnd")
 
 [node name="RunController" parent="." unique_id=1816630673 instance=ExtResource("2_7vrqn")]
+script = ExtResource("4_vmw6g")
 
 [node name="Player" parent="." unique_id=835367350 instance=ExtResource("3_bhfnd")]
 position = Vector2(548, 1632)

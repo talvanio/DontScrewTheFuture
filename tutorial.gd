@@ -2,13 +2,14 @@ extends Node2D
 
 @onready var texto_instrucciones = $InterfaceTutorial/TextoInstrucciones
 @onready var timer = $InterfaceTutorial/TutorialTimer
-
+@onready var run_controller = $RunController
 # Traete las escenas que ya tenés creadas
 @export var pancho_scene : PackedScene 
 
 var paso_actual : int = 1
 
 func _ready() -> void:
+	run_controller.background_speed = 500
 	get_tree().paused = false
 	texto_instrucciones.text = "¡ALERTA! El tiempo se rompió.\n USA A Y D PARA MOVERTE."
 	timer.start()
