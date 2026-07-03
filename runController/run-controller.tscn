@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://civewwlqrsdn7"]
 
-[ext_resource type="Script" uid="uid://2g2rxmeova8" path="res://runController/run-controller.gd" id="1_bmwgd"]
 [ext_resource type="Texture2D" uid="uid://cho6far0okj5t" path="res://assets/scenery/Grass.png" id="2_p4wnv"]
 [ext_resource type="Script" uid="uid://d3kcl1hw1770q" path="res://runController/background_controller.gd" id="3_uubns"]
 
@@ -82,7 +81,6 @@ texture = ExtResource("2_p4wnv")
 sources/0 = SubResource("TileSetAtlasSource_p4wnv")
 
 [node name="RunController" type="Node2D" unique_id=1816630673]
-script = ExtResource("1_bmwgd")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=355051846]
 texture_filter = 1

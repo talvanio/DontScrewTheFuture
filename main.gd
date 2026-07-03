@@ -44,7 +44,6 @@ func _on_restart():
 
 func run_game_over() -> void:
 	get_tree().paused = true
-	game_over_distance.text = "Distância percorrida: %dm" % int(run_controller.distance)
 	game_over_screen.visible = true
 
 

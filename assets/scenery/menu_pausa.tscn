@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c2154h5nyns1v"]
+
+[ext_resource type="Script" uid="uid://y11rhrunq2ry" path="res://assets/scenery/menu_pausa.gd" id="1_t0n38"]
+
+[node name="MenuPausa" type="CanvasLayer" unique_id=1859703619]
+process_mode = 3
+script = ExtResource("1_t0n38")
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=801313287]
+offset_right = 1114.0
+offset_bottom = 1913.0
+color = Color(0, 0, 0, 0.5176471)
+
+[node name="Contenedor principal" type="VBoxContainer" parent="." unique_id=1543745001]
+offset_top = -2.0
+offset_right = 1087.0
+offset_bottom = 1958.0
+alignment = 1
+
+[node name="Titulo" type="Label" parent="Contenedor principal" unique_id=1985240529]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "MENU PAUSA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonContinuar" type="Button" parent="Contenedor principal" unique_id=1510417457]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "CONTINUAR"
+
+[node name="ButtonControles" type="Button" parent="Contenedor principal" unique_id=1226905656]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "OPCIONES"
+
+[node name="ButtonSalir" type="Button" parent="Contenedor principal" unique_id=1408918643]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "SALIR"
+
+[node name="PanelControles" type="PanelContainer" parent="." unique_id=2123048328]
+offset_right = 1111.0
+offset_bottom = 1949.0
+
+[node name="Historia" type="Label" parent="PanelControles" unique_id=195799317]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Sos un civil del futuro que metió el dedo donde no debía y terminó atrapado en el pasado.
+ ¿El problema? Alterar la línea temporal rompió la realidad ¡y ahora el cielo está escupiendo panchos explosivos! 
+Corré por tu vida y, por lo que más quieras: ¡No arruines el futuro!
+
+Controles:
+A- Mueves el jugador a la izquierda
+D-Mueves el jugador a la derecha
+Shift- El jugador usa su tecnica futurista para hacer un dash
+
+No te preocupes, puede que los panchos te hagan daño
+pero tus amigos del futuro te enviaran vidas para que
+no mueras "
+autowrap_mode = 3
+
+[connection signal="pressed" from="Contenedor principal/ButtonContinuar" to="." method="_on_button_continuar_pressed"]
+[connection signal="pressed" from="Contenedor principal/ButtonControles" to="." method="_on_button_controles_pressed"]
+[connection signal="pressed" from="Contenedor principal/ButtonSalir" to="." method="_on_button_salir_pressed"]

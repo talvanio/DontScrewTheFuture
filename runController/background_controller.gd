@@ -10,8 +10,8 @@ var height := 1920
 func _ready():
 	a.position.y = 0
 	b.position.y = -height
-func _process(delta):
 
+func _process(delta):
 	var move = speed * delta
 
 	a.position.y += move
