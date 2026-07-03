@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://depp85d4qeby2"]
 
-[ext_resource type="Script" uid="uid://cyyixw7k71i0e" path="res://player/player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://cfnkv10unqjsc" path="res://player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bkt06y2wqive8" path="res://assets/effects/blink/SP103_01.png" id="2_boad6"]
 [ext_resource type="Texture2D" uid="uid://dhq4t5ou2twmn" path="res://assets/player/16x16 Run-Sheet-Left.png" id="2_hqtel"]
 [ext_resource type="Texture2D" uid="uid://bjocivlbwnobv" path="res://assets/player/16x16 Run-Sheet.png" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://cpidcje20yo2f" path="res://assets/effects/blink/SP103_02.png" id="3_rgyib"]
 [ext_resource type="Texture2D" uid="uid://dtsdr3axm6u5j" path="res://assets/effects/blink/SP103_03.png" id="4_hg6s5"]
 [ext_resource type="Texture2D" uid="uid://yw54638cgw1b" path="res://assets/effects/blink/SP103_04.png" id="5_8t03j"]
+[ext_resource type="AudioStream" uid="uid://wdfhsb3a8fl8" path="res://Player/explosion.mp3" id="8_od3ui"]
+[ext_resource type="AudioStream" uid="uid://cini11r4o27i4" path="res://Player/heal.mp3" id="9_00tjw"]
+[ext_resource type="AudioStream" uid="uid://bo816svkf4rjv" path="res://Player/blink.mp3" id="10_x3vf3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
 atlas = ExtResource("2_hqtel")
@@ -203,3 +206,12 @@ autoplay = "walk_up"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=930151848 groups=["player"]]
 position = Vector2(4, 27)
 shape = SubResource("RectangleShape2D_btcbx")
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="." unique_id=549276748]
+stream = ExtResource("8_od3ui")
+
+[node name="HealSound" type="AudioStreamPlayer2D" parent="." unique_id=59200634]
+stream = ExtResource("9_00tjw")
+
+[node name="DashSound" type="AudioStreamPlayer2D" parent="." unique_id=1528987404]
+stream = ExtResource("10_x3vf3")

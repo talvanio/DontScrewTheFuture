@@ -2,6 +2,9 @@ extends Node2D
 
 @export var horizontal_speed := 800.0
 @onready var sprite = $PlayerSprite
+@onready var damage_sound = $DamageSound
+@onready var heal_sound = $HealSound
+@onready var dash_sound = $DashSound
 @export var max_health: int = 4
 
 # Corregido: Se inicializa normal y se asegura el valor máximo
@@ -68,6 +71,7 @@ func dash_if_disponible(dir):
 func start_dash(dir):
 	is_dashing = true
 	$CollisionShape2D.disabled = true
+	dash_sound.play()
 	sprite.play("blink")
 	await sprite.animation_finished
 
@@ -115,6 +119,8 @@ func set_dash_on_cooldown():
 func take_damage(damage: int) -> void:
 	current_health -= damage
 	current_health = max(current_health, 0)
+	damage_sound.play()
+	
 	emit_signal("health_changed", current_health)
 	blink_red()
 
@@ -126,7 +132,9 @@ func add_health(amount: int) -> bool:
 		print("Vidas llenas (", current_health, "/", max_health, "). No se puede recoger.")
 		return false
 		
+
 	# Sumamos la vida sin pasarnos del máximo
+	heal_sound.play()
 	current_health = min(current_health + amount, max_health)
 	emit_signal("health_changed", current_health)
 	print("¡Vida recogida! Vida actual: ", current_health)
